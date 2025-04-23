@@ -1,9 +1,10 @@
-export default function groceriesList() {
-  return new Map([
-    ['Apples', 10],
-    ['Tomatoes', 10],
-    ['Pasta', 1],
-    ['Rice', 1],
-    ['Banana', 5],
-  ]);
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
+    throw new Error('Cannot process');
+  }
+  map.forEach((value, key) => {
+    if (value === 1) {
+      map.set(key, 100);
+    }
+  });
 }
